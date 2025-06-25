@@ -40,3 +40,9 @@ Industrial temperature monitoring
 Laboratory experiments and environmental studies
 
 This system provides a simple, efficient, and cost-effective way to measure temperature, making it ideal for DIY projects and educational purposes.
+
+
+*OUTPUT*:
+![Image](https://github.com/user-attachments/assets/b37218ac-ec50-4c87-b292-b365ae7eb4dd)
+
+![Image](https://github.com/user-attachments/assets/1700592b-cd3f-468d-805d-2cf9b7fd359a)
