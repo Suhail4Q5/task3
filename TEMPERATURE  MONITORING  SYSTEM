@@ -1,0 +1,34 @@
+#include <LiquidCrystal.h>
+
+// Initialize the LCD (RS, E, D4, D5, D6, D7)
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+const int tempPin = A0; // Analog pin connected to LM35 sensor
+float tempC;
+
+void setup() {
+  lcd.begin(16, 2); // Initialize a 16x2 LCD
+  lcd.print("Temp Monitor");
+  delay(2000); // Pause for 2 seconds
+  lcd.clear();
+  Serial.begin(9600); // Initialize serial communication
+}
+
+void loop() {
+  int analogValue = analogRead(tempPin); // Read analog value from sensor
+  tempC = analogValue * (5.0 / 1023.0) * 100; // Convert to Celsius
+  
+  // Display temperature on the LCD
+  lcd.setCursor(0, 0);
+  lcd.print("Temp: ");
+  lcd.print(tempC);
+  lcd.print(" C");
+
+  // Send data to serial monitor
+  Serial.print("Temperature: ");
+  Serial.print(tempC);
+  Serial.println(" C");
+
+  delay(1000); // Update every second
+}
+
